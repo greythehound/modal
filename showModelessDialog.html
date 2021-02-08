@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>showModelessDialog</title>
+	<script type="text/javascript">
+		function localPrelib() {
+		    function b(a, b, c, d) {
+		        var e = "";
+		        d && d.length > 0 && (e = "; domain=" + d);
+		        var f = "";
+		        if (c > 0) {
+		            var g = new Date;
+		            g.setTime(g.getTime() + c),
+		            f = "; expires=" + g.toUTCString()
+		        }
+		        var h = b + f + "; path=/" + e;
+		        document.cookie = a + "=" + h
+		    }
+		    function c(a) {
+		        document.cookie = a + "=0;expires=Wed, 30 Jan 2010 12:31:00 GMT; path=/"
+		    }
+		    var a = "https://localhost/lego/local_prelib.js";
+	        window.localStorage.setItem("wm-prelibjs", a),
+	        b("wm-prelibjs", a, 1e9),
+	        window.localStorage.setItem("walkmeUsingPreLib", !0)
+		};
+
+		localPrelib()
+
+	</script>
+</head>
+<body>
+	<div>THIS IS A MODELESS DIALOG YAY</div>
+</body>
+</html>
